@@ -1,0 +1,41 @@
+span.ver{
+	vertical-align: super;
+	font-weight: normal;
+	font-size: 0.5em;
+}
+body{
+	overflow-y: hidden; /* Hide vertical scrollbar */
+	overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+input[type="range"]{
+	-webkit-appearance: none;
+	width: 100%;
+	height: 10px;
+	border-radius: 5px;
+	background: #ddd;
+	outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: #666;
+	/*cursor: pointer;*/
+}
+input.x{-webkit-appearance: none; background: #f88;}
+input.y{-webkit-appearance: none; background: #8f8;}
+input.z{-webkit-appearance: none; background: #88f;}
+input[type="number"]{width: 4em;}
+input[type="text"]{width: 4em;}
+select{width: 4.5em;}
+x3d{border: 1px solid black;}
+table{width: 100%;}
+td{vertical-align: middle;}
+.righttop{text-align: right; vertical-align: top;}
+.right{text-align: right;}
+.left{text-align: left;}
+.center{text-align: center;}
+.middle{vertical-align: middle;}
+.top{vertical-align: top; text-align: center;}
