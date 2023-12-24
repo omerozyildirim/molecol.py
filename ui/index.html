@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Collider UI</title>
+		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="https://www.x3dom.org/release/x3dom.css">
+		<script src="https://www.x3dom.org/release/x3dom.js" defer></script>
+		<script src="libs/lib_forms.js" defer></script>
+		<script src="libs/lib_json.js" defer></script>
+		<script src="libs/lib_vecmat.js" defer></script>
+		<script src="libs/lib_chemical_elements.js" defer></script>
+		<script src="main.js" defer></script>
+		<script defer>
+		</script>
+	</head>
+	<body onload="init(); resize();" onresize="resize();">
+		<center>
+		<table border="0">
+			<tr>
+				<td class="top">
+					<x3d id="x3dmain" showStat="false">
+						<scene id="main_scene">
+							<background skycolor="1.0 1.0 1.0" groundcolor="1.0 1.0 1.0"></background>
+							<viewpoint centerOfRotation="2.5 0 0" position="2.5 0 10" orientation="0 0 1 0" id="vp"></viewpoint>
+							<group id="container0">
+								<transform translation="0 0 0" id="base_1">
+									<transform rotation='0 0 1 1.57079632679489661923'><shape><appearance><material diffuseColor='1 0 0' transparency='0.5'></material></appearance><cylinder id="axisx_1" height='1.0' radius='0.01'></cylinder></shape></transform>
+									<transform rotation='0 0 1 0.00000000000000000000'><shape><appearance><material diffuseColor='0 1 0' transparency='0.5'></material></appearance><cylinder id="axisy_1" height='1.0' radius='0.01'></cylinder></shape></transform>
+									<transform rotation='1 0 0 1.57079632679489661923'><shape><appearance><material diffuseColor='0 0 1' transparency='0.5'></material></appearance><cylinder id="axisz_1" height='1.0' radius='0.01'></cylinder></shape></transform>
+									<matrixtransform id="temp_1">
+										<matrixtransform id="perm_1">
+											<transform id="tran_1">
+												<group id="container1"></group>
+											</transform>
+										</matrixtransform>
+									</matrixtransform>
+								</transform>
+								<transform translation="5 0 0" id="base_2">
+									<transform rotation='0 0 1 1.57079632679489661923'><shape><appearance><material diffuseColor='1 0 0' transparency='0.5'></material></appearance><cylinder id="axisx_2" height='1.0' radius='0.01'></cylinder></shape></transform>
+									<transform rotation='0 0 1 0.00000000000000000000'><shape><appearance><material diffuseColor='0 1 0' transparency='0.5'></material></appearance><cylinder id="axisy_2" height='1.0' radius='0.01'></cylinder></shape></transform>
+									<transform rotation='1 0 0 1.57079632679489661923'><shape><appearance><material diffuseColor='0 0 1' transparency='0.5'></material></appearance><cylinder id="axisz_2" height='1.0' radius='0.01'></cylinder></shape></transform>
+									<matrixtransform id="temp_2">
+										<matrixtransform id="perm_2">
+											<transform id="tran_2">
+												<group id="container2"></group>
+											</transform>
+										</matrixtransform>
+									</matrixtransform>
+								</transform>
+							</group>
+						</scene>
+					</x3d>
+				</td>
+				<td class="top">
+				<h2>collider.ui <span class="ver">v1.0</span></h2>
+					<form id="molecule1" oninput="refresh(1);" onsubmit="return false;">
+					<table border="0">
+						<tr><td class="center" colspan="2"><b>Molecule 1</b></td></tr>
+						<tr><td class="left" colspan="2"><input type="file" id="filea" onchange="load(1, this.files[0])"></td></tr>
+						<tr><td class="right">Impact point</td><td class="center"><select id="atoma1"></select>&nbsp;<input type="number" min="-1" max="2" step="0.01" value="0.5" id="ratioab1">&nbsp;<select id="atomb1"></select></td></tr>
+						<tr><td class="right">            </td><td><input class="x" type="range" min="-3.14159265358979323846" max="3.14159265358979323846" step="0.01" value="0" id="inpitch1" oninput="temp_1.setFieldValue('matrix', x3dom.fields.SFMatrix4f.rotationX(this.value))" onchange="perm_1.setFieldValue('matrix', perm_1.getFieldValue('matrix').mult(temp_1.getFieldValue('matrix'))); temp_1.setFieldValue('matrix', new x3dom.fields.SFMatrix4f()); this.value = '0';"></td></tr>
+						<tr><td class="right"> Orientation</td><td><input class="y" type="range" min="-3.14159265358979323846" max="3.14159265358979323846" step="0.01" value="0" id="inyaw1"   oninput="temp_1.setFieldValue('matrix', x3dom.fields.SFMatrix4f.rotationY(this.value))" onchange="perm_1.setFieldValue('matrix', perm_1.getFieldValue('matrix').mult(temp_1.getFieldValue('matrix'))); temp_1.setFieldValue('matrix', new x3dom.fields.SFMatrix4f()); this.value = '0';"></td></tr>
+						<tr><td class="right">            </td><td><input class="z" type="range" min="-3.14159265358979323846" max="3.14159265358979323846" step="0.01" value="0" id="inroll1"  oninput="temp_1.setFieldValue('matrix', x3dom.fields.SFMatrix4f.rotationZ(this.value))" onchange="perm_1.setFieldValue('matrix', perm_1.getFieldValue('matrix').mult(temp_1.getFieldValue('matrix'))); temp_1.setFieldValue('matrix', new x3dom.fields.SFMatrix4f()); this.value = '0';"></td></tr>
+					</table>
+					</form>
+					<br>
+					<form id="molecule2" oninput="refresh(2);" onsubmit="return false;">
+					<table border="0">
+						<tr><td class="center" colspan="2"><b>Molecule 2</b></td></tr>
+						<tr><td class="left" colspan="2"><input type="file" id="fileb" onchange="load(2, this.files[0])"></td></tr>
+						<tr><td class="right">Impact point</td><td class="center"><select id="atoma2"></select>&nbsp;<input type="number" min="-1" max="2" step="0.01" value="0.5" id="ratioab2">&nbsp;<select id="atomb2"></select></td></tr>
+						<tr><td class="right">            </td><td><input class="x" type="range" min="-3.14159265358979323846" max="3.14159265358979323846" step="0.01" value="0" id="inpitch2" oninput="rotemp(2, x3dom.fields.SFMatrix4f.rotationX, this.value)" onchange="roperm(2); this.value = '0';"></td></tr>
+						<tr><td class="right"> Orientation</td><td><input class="y" type="range" min="-3.14159265358979323846" max="3.14159265358979323846" step="0.01" value="0" id="inyaw2"   oninput="rotemp(2, x3dom.fields.SFMatrix4f.rotationY, this.value)" onchange="roperm(2); this.value = '0';"></td></tr>
+						<tr><td class="right">            </td><td><input class="z" type="range" min="-3.14159265358979323846" max="3.14159265358979323846" step="0.01" value="0" id="inroll2"  oninput="rotemp(2, x3dom.fields.SFMatrix4f.rotationZ, this.value)" onchange="roperm(2); this.value = '0';"></td></tr>
+					</table>
+					</form>
+					<br>
+					<form id="common" oninput="base_2.setAttribute('translation', -parseFloat(frame.value) * parseFloat(distance.value)); set_common();" onsubmit="return false;">
+					<table border="0">
+						<tr><td class="center" colspan="2"><b>Collision</b></td></tr>
+						<tr><td class="right">Distance</td><td class="left"><input type="number" min="0" max="10" step="0.01" value="5" id="distance"> &#8491;</td></tr>
+						<tr><td class="right">Velocity</td><td class="left"><input type="number" min="0" max="10" step="0.01" value="5" id="velocity"> &#8491; / fs</td></tr>
+						<tr><td class="right">Preview </td><td><input type="range" min="-1" max="0" step="0.01" value="-1" id="frame"></td></tr>
+					</table>
+					</form>
+					<br>
+					<form id="common" oninput="set_view(Array.from(document.getElementsByName('molecule_focus')).find(arg => arg.checked).value);" onsubmit="return false;"><!-- Some one-liner! -->
+					<table border="0">
+						<tr><td class="center" colspan="2"><b>Display</b></td></tr>
+						<tr>
+							<td class="righttop">Set focus</td>
+							<td class="left">
+								<input type="radio" name="molecule_focus" value="1" id="focus_mol1"><label for="focus_mol1">Molecule 1</label><br>
+								<input type="radio" name="molecule_focus" value="2" id="focus_mol2"><label for="focus_mol2">Molecule 2</label><br>
+								<input type="radio" name="molecule_focus" value="0" id="focus_center" checked><label for="focus_center">Both molecules</label>
+							</td>
+						</tr>
+					</table>
+					</form>
+					<p class="right"><button type="button" onclick="save_json()">Save JSON</button></p>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
