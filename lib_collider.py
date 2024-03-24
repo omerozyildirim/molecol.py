@@ -3,7 +3,7 @@ from ase.io import read
 from ase.io import write
 import numpy as np
 
-version = "1.0"
+version = "2.0"
 
 class Collision:
 	def __init__(self, input1, input2, calculator, integrator, filename):
@@ -24,27 +24,6 @@ class Collision:
 		self.resume = None
 		self.realtime = 0
 		self.message = ""
-
-	def __add_cell(self, dummy): # dummy is the extra space between the molecule borders and the cell wall in Angstroms
-		minx, maxx = float('inf'), float('-inf')
-		miny, maxy = float('inf'), float('-inf')
-		minz, maxz = float('inf'), float('-inf')
-		for atom in self.output:
-			if atom.position[0] < minx:
-				minx = atom.position[0]
-			if atom.position[0] > maxx:
-				maxx = atom.position[0]
-			if atom.position[1] < miny:
-				miny = atom.position[1]
-			if atom.position[1] > maxy:
-				maxy = atom.position[1]
-			if atom.position[2] < minz:
-				minz = atom.position[2]
-			if atom.position[2] > maxz:
-				maxz = atom.position[2]
-		self.output.translate((dummy - minx, dummy - miny, dummy - minz))
-		self.output.set_cell([maxx - minx + dummy * 2, maxy - miny + dummy * 2, maxz - minz + dummy * 2])
-		self.output.set_pbc([True, True, True])
 
 	def locate(self, distance): # a1: 1st point in input1, b1: 1st point in input2
 		self.a1 = self.mol1.get_positions()[self.input1["points"][0][0]] * (1.0 - self.input1["points"][0][1]) + self.mol1.get_positions()[self.input1["points"][0][2]] * self.input1["points"][0][1] # 1st point on molecule 1 is calculated
@@ -77,13 +56,14 @@ class Collision:
 		self.mol2.set_velocities([-velocity, 0, 0])
 		self.output = self.mol1 + self.mol2 # Inputs should be reduced to a single entity to perform an ab initio calculation
 		self.output.set_calculator(self.calculator)
+		self.output.set_pbc([False, False, False])
 		# Initial electron density output
 		b = len(str(blocks))
 		d = len(str(blocks * steps))
 		suffix = (d - 1) * "0"
 		write("initial.xyz", self.output)
 		i, c, e = 0, 1, 1
-		self.__add_cell(10)  # Set the box to be saved as a cubefile
+		self.center(vacuum=10)  # Set the box to be saved as a cubefile
 		self.output.get_potential_energy()  # Get initial potential energy to calculate the initial electron distribution
 		rho = self.calculator.get_all_electron_density()
 		cubefile = self.filename + "_" + suffix[:b - c] + str(i) + "_" + suffix[:d - e] + str(i * steps) + "_" + str(self.realtime) + ".cube"
