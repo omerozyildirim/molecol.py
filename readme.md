@@ -176,8 +176,9 @@ Impact points on each molecule can be adjusted by selecting the atoms and changi
 
 |![](imgs/020.png)|![](imgs/021.png)|
 | :- | :- |
-|![](imgs/022.png)|![](imgs/023.png)|
-|**Figure 6.** Previewing the collision - mid-bond of one molecule to the mid-bond of the other.||
+|![](imgs/022.png)|![](imgs/023.png)||
+
+**Figure 6.** Previewing the collision - mid-bond of one molecule to the mid-bond of the other.
 
 The collision can be previewed using the preview slider to see the collision instance more clearly, as seen on Figure 6. The slider moves the second molecule along the collision path, with the rightmost position representing the hypothetical collision instance. After the adjustments are finished, the JSON file can be obtained using the Save JSON button.
 
