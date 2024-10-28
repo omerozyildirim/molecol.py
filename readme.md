@@ -138,7 +138,6 @@ steps = int(sys.argv[2])
 blocks = int(sys.argv[3])
 
 filename = sys.argv[1].replace(".json", "")
-![](imgs/009.png)
 
 Once the collision parameters are imported and the command-line parameters are parsed, a collision object is initialized.
 
@@ -155,7 +154,6 @@ timestep = 0.1 / velocity
 coll1 = Collision(input1, input2, calculator, integrator, filename)
 
 result = coll1.collide(distance, velocity, timestep, steps, blocks)
-![](imgs/010.png)
 
 GPAW is a DFT package for ASE library.<sup>16,17</sup> Since it is based on DFT, bond breaking and forming processes can be simulated. Here it is used with the default parameters, only a filename is defined so that the DFT calculations can be logged. For different input molecules, the parameters may need to be fine-tuned to achieve convergence during energy calculations. Velocity-Verlet is the most basic MD integrator, perfectly suitable to simulate a couple of molecules.
 
