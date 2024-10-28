@@ -56,27 +56,27 @@ The relative orientations of the molecules are represented by a transformation m
 
 Rotation can be represented by the following matrices:
 
-x(α)=[1000cosα−sinα0sinαcosα]![](imgs/001.png)					(2a)
+![](imgs/001.png)					(2a)
 
-y(β)=[cosβ0sinβ010−sinβ0cosβ]![](imgs/002.png)					(2b)
+![](imgs/002.png)					(2b)
 
-z(γ)=[cosγ−sinγ0sinγcosγ0001]![](imgs/003.png)					(2c)
+![](imgs/003.png)					(2c)
 
 <i>R<sub>x</sub></i>, <i>R<sub>y</sub></i> and <i>R<sub>z</sub></i> indicate the rotations around <i>x</i>, <i>y</i> and <i>z</i> axis, with the angles <i>α</i>, <i>β</i>, and <i>γ</i> respectively. These three rotations can be combined by multiplying the rotation matrices.
 
-R(α,β,γ)=z(γ)y(β)x(α)![](imgs/004.png)					(3)
+![](imgs/004.png)					(3)
 
 This operation results in the following combined rotation matrix:
 
-R(α,β,γ)=[cosβcosγsinαsinβcosγ−cosαsinγcosαsinβcosγ+sinαsinγcosβsinγsinαsinβsinγ+cosαcosγcosαsinβsinγ−sinαcosγ−sinβsinαcosβcosαcosβ]![](imgs/005.png)		(4)
+![](imgs/005.png)		(4)
 
 Translation is defined by a vector and implemented simply by a vector addition operation. To calculate both translation and rotation as a single matrix multiplication, the matrices of both operations must be expressed in homogeneous coordinates:
 
-T(v)=[100vx010vy001vz0001]![](imgs/006.png)						(5)
+![](imgs/006.png)						(5)
 
 Then the combined translation matrix can be defined as follows:
 
-T(α,β,γ,v)=[cosβcosγsinαsinβcosγ−cosαsinγcosαsinβcosγ+sinαsinγvxcosβsinγsinαsinβsinγ+cosαcosγcosαsinβsinγ−sinαcosγvy−sinβsinαcosβcosαcosβvz0001]![](imgs/007.png)	(6)
+![](imgs/007.png)	(6)
 
 Applying the transformation to the molecules is implemented by multiplying each and every atomic coordinate by the transformation matrix defined in Equation (6).
 
