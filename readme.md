@@ -84,23 +84,6 @@ Applying the transformation to the molecules is implemented by multiplying each 
 
 Temporal evolution of molecular systems can be simulated using Molecular Dynamics (MD). Its theoretical background is based on Newton's law of motion. The total potential energy of the system and forces acting on the atoms as a result of the potential energy field are calculated. Then using the forces accelerations, using the accelerations velocities and using the velocities new positions of the atoms are calculated. Once the new positions are determined, the forces for the new configuration are calculated and the loop continues for a certain number of iterations. The key components of the methodology here are the algorithm for calculating the forces and the iteration algorithm for temporal integration - as implemented separately in ASE (Figure 1).
 
-Calculate total potential energy
-
-Calculate forces on atoms
-
-Calculate accelerations of atoms
-
-Calculate velocities of atoms
-
-Calculate new positions of atoms
-
-Calculator block
-
-Integrator block
-
-
-
-
 ![](imgs/008.png)
 
 **Figure 1.** Simulation structure of ASE
