@@ -168,8 +168,8 @@ The focus of the main view can be set to either or both of the molecules using t
 |![](imgs/014.png)|![](imgs/015.png)|
 | :- | :- |
 |![](imgs/016.png)|![](imgs/017.png)|
-|![](imgs/018.png)|![](imgs/019.png)|
-|**Figure 5.** Positioning the molecule with respect to local origin as a result of different ratio values. Top row: -0.5, 0.0, middle row: 0.33, 0.5, bottom row: 1.0, 1.5||
+|![](imgs/018.png)|![](imgs/019.png)||
+**Figure 5.** Positioning the molecule with respect to local origin as a result of different ratio values. Top row: -0.5, 0.0, middle row: 0.33, 0.5, bottom row: 1.0, 1.5
 
 Impact points on each molecule can be adjusted by selecting the atoms and changing the ratio value on each molecule's sections. The first atom can be selected with the selector on the left, the second atom can be selected using the selector on the right. The ratio value can be entered into the numeric input field in the middle. The results of different ratio values can be seen in Figure 5. A value of 0.0 means the point is right on the first atom, 1.0 means the point is right on the second atom, 0.5 means right on the middle point between two atoms. Any value between 0.0 and 0.5 means the point is closer to the first atom, between 0.5 and 1.0 means the point is closer to the second atom. Negative values are possible, moving the point out from the first atom's side, as well as values greater than 1.0 which moves the point out from the second atom's side.
 
