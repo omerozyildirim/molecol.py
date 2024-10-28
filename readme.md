@@ -1,10 +1,17 @@
-﻿Collider.py: A Framework to Simulate Molecular Collisions
-
-*Ömer Özyıldırım \**
-
-\* İstanbul Technical University - Faculty of Computer and Informatics Engineering
-
-**Keywords:** Molecular collision simulation, reaction prediction, reaction intermediate, Python library, web-based user interface
+title: '﻿Collider.py: A Framework to Simulate Molecular Collisions'
+tags:
+- Molecular collision simulation
+- Reaction prediction
+- Reaction intermediate
+- Python library
+- Web-based user interface
+authors:
+- name: Ömer Özyıldırım
+  orcid: 0000-0002-9965-683X
+  affiliation: 1
+affiliations:
+- name: İstanbul Technical University - Faculty of Computer and Informatics Engineering, Türkiye
+  index: 1
 
 **Abstract**
 
