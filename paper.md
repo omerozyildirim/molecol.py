@@ -112,12 +112,12 @@ This section explains how the collider.py library can be used in your scripts, w
 import sys
 from ase import units
 import json
-with open(sys.argv[1]) as json\_file:
-input\_data = json.load(json\_file)
-input1 = input\_data["inputs"][0]
-input2 = input\_data["inputs"][1]
-distance = input\_data["distance"] # It's already in Angstroms
-velocity = input\_data["velocity"] \* units.Ang / units.fs
+with open(sys.argv[1]) as json_file:
+input_data = json.load(json_file)
+input1 = input_data["inputs"][0]
+input2 = input_data["inputs"][1]
+distance = input_data["distance"] # It's already in Angstroms
+velocity = input_data["velocity"] * units.Ang / units.fs
 steps = int(sys.argv[2])
 blocks = int(sys.argv[3])
 filename = sys.argv[1].replace(".json", "")
@@ -127,7 +127,7 @@ Once the collision parameters are imported and the command-line parameters are p
 
 ```python
 from gpaw import GPAW
-calculator = GPAW(txt = filename + '\_calc.log')
+calculator = GPAW(txt = filename + '_calc.log')
 from ase.md.verlet import VelocityVerlet
 integrator = VelocityVerlet
 timestep = 0.1 / velocity
