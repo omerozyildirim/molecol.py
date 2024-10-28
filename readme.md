@@ -98,45 +98,32 @@ The difference of this work's methodology lies in the number of molecules the sy
 
 This section explains how the collider.py library can be used in your scripts, with the details of the example script given. The whole framework can be downloaded from github.org.<sup>15</sup> The script accepts 3 command-line arguments; the JSON file containing the collision parameters (the output of collider.ui), number of steps in a simulation block and the number of blocks for the simulation to continue. The simulation is divided into blocks so that at the end of each block the electron density information is written as a cube file. The user can adjust the frequency of the generated cube files by adjusting the number of blocks and the number of steps inside a block.
 
+```python
 import sys
-
 from ase import units
-
 import json
-
 with open(sys.argv[1]) as json\_file:
-
 input\_data = json.load(json\_file)
-
 input1 = input\_data["inputs"][0]
-
 input2 = input\_data["inputs"][1]
-
 distance = input\_data["distance"] # It's already in Angstroms
-
 velocity = input\_data["velocity"] \* units.Ang / units.fs
-
 steps = int(sys.argv[2])
-
 blocks = int(sys.argv[3])
-
 filename = sys.argv[1].replace(".json", "")
+```
 
 Once the collision parameters are imported and the command-line parameters are parsed, a collision object is initialized.
 
+```python
 from gpaw import GPAW
-
 calculator = GPAW(txt = filename + '\_calc.log')
-
 from ase.md.verlet import VelocityVerlet
-
 integrator = VelocityVerlet
-
 timestep = 0.1 / velocity
-
 coll1 = Collision(input1, input2, calculator, integrator, filename)
-
 result = coll1.collide(distance, velocity, timestep, steps, blocks)
+```
 
 GPAW is a DFT package for ASE library.<sup>16,17</sup> Since it is based on DFT, bond breaking and forming processes can be simulated. Here it is used with the default parameters, only a filename is defined so that the DFT calculations can be logged. For different input molecules, the parameters may need to be fine-tuned to achieve convergence during energy calculations. Velocity-Verlet is the most basic MD integrator, perfectly suitable to simulate a couple of molecules.
 
