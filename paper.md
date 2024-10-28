@@ -1,3 +1,4 @@
+---
 title: '﻿Collider.py: A Framework to Simulate Molecular Collisions'
 tags:
 - Molecular collision simulation
@@ -12,6 +13,8 @@ authors:
 affiliations:
 - name: İstanbul Technical University - Faculty of Computer and Informatics Engineering, Türkiye
   index: 1
+---
+***Collider.py: A Framework to Simulate Molecular Collisions***
 
 **Abstract**
 
@@ -19,7 +22,7 @@ Although usually ignored for a more intuitive macroscopic understanding, molecul
 
 To answer these limitations, a novel methodology is developed based on a more fine-tuned approach for simulations. Its Python implementation based on current state-of-the-art libraries and supporting applications based on globally accessible web technologies is presented as a software framework. Collider.py focuses on fine-tuning the collision parameters before running the simulation. Individual linear velocities, positions, and orientations of the molecules can be defined as well as the impact points on each molecule. Our framework is based on ASE - a computational chemistry library for Python and consists of a web application to design the collisions in detail.
 
-Introduction
+**Introduction**
 
 The current reaction product estimation paradigm is based on prior experimental results. Conventional methods, i.e., a detailed database query or a machine learning algorithm, require experimental reaction data already recorded.<sup>1–5</sup> As a result, any new reactions which do not resemble the experimental records are not likely to be estimated. The solution is to *'calculate'* the output of a reaction using computational chemistry methods.
 
