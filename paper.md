@@ -62,7 +62,7 @@ A point inside a molecule is defined on the imaginary line segment connecting tw
 
 The relative orientations of the molecules are represented by a transformation matrix in 3 spatial dimensions for each molecule. Such a matrix would include the position as well as the orientation information about the molecule. In 3-dimensional space, any change in the position or the orientation of the objects with respect to the origin are called linear transformations. Linear algebra formulates these operations using transformation matrices. A transformation matrix *A*, when multiplied by a vector **x**, which represents a point in 3-dimensional space, results in applying the transformation to the vector, effectively changing its position or orientation with respect to the origin.<sup>13,14</sup>
 
-**x**' = *A***x**						(1)
+![](imgs/eq1.png)						(1)
 
 Rotation can be represented by the following matrices:
 
