@@ -66,27 +66,27 @@ The relative orientations of the molecules are represented by a transformation m
 
 Rotation can be represented by the following matrices:
 
-![](imgs/001.png)					(2a)
+![](imgs/eq2a.png)					(2a)
 
-![](imgs/002.png)					(2b)
+![](imgs/eq2b.png)					(2b)
 
-![](imgs/003.png)					(2c)
+![](imgs/eq2c.png)					(2c)
 
 <i>R<sub>x</sub></i>, <i>R<sub>y</sub></i> and <i>R<sub>z</sub></i> indicate the rotations around <i>x</i>, <i>y</i> and <i>z</i> axis, with the angles <i>α</i>, <i>β</i>, and <i>γ</i> respectively. These three rotations can be combined by multiplying the rotation matrices.
 
-![](imgs/004.png)					(3)
+![](imgs/eq3.png)					(3)
 
 This operation results in the following combined rotation matrix:
 
-![](imgs/005.png)		(4)
+![](imgs/eq4.png)		(4)
 
 Translation is defined by a vector and implemented simply by a vector addition operation. To calculate both translation and rotation as a single matrix multiplication, the matrices of both operations must be expressed in homogeneous coordinates:
 
-![](imgs/006.png)						(5)
+![](imgs/eq5.png)						(5)
 
 Then the combined translation matrix can be defined as follows:
 
-![](imgs/007.png)	(6)
+![](imgs/eq6.png)	(6)
 
 Applying the transformation to the molecules is implemented by multiplying each and every atomic coordinate by the transformation matrix defined in Equation (6).
 
