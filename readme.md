@@ -149,34 +149,34 @@ Here, xyz files can be viewed using any molecule viewer, log files are plain tex
 
 A web application named collider.ui is presented to make the adjustment of the parameters much easier using an intuitive user interface.<sup>18</sup> The main view presents a 3-dimensional representation of the molecules to collide so that the orientations can be adjusted visually using the controls on the right of the window. On the initial view, a pair of axes sets can be seen which represent the local origins of the molecules as seen in Figure 2. The collision points of the molecules are the origins of their local axes. The molecules are modified around these origins so that the collision point chosen lies on top of these local origins.
 
-![](imgs/011.png)
+![](imgs/initial.png)
 
 **Figure 2.** Initial main view of collider.ui.
 
-![](imgs/012.png)
+![](imgs/loaded.png)
 
 **Figure 3.** Main view of collider.ui after the molecules are imported.
 
 The molecules can be imported using the file import buttons labeled "Choose File". After a molecule is imported, its atoms are represented by CPK colored spheres,</sup> as seen in Figure 3. The atomic spheres share a small constant radius, which does not change proportional to atomic radii. This choice is made to avoid the larger atomic spheres obscuring the collision points. Labels seen inside the atomic spheres match the representation of each atom inside the selectors. They are composed of the element symbol and the sequence number of the atom in the molecule description file to provide a unique label for each atom. The orientations of imported molecules can be adjusted using the sliders, which are color-coded matching the colors of the local axes of the molecules - each slider rotates the molecule around the axis with the same color.
 
-![](imgs/013.png)
+![](imgs/axes.png)
 
 **Figure 4.** The focus of the main view is set to the first molecule.
 
 The focus of the main view can be set to either or both of the molecules using the radio buttons on the display section (Figure 4). The distance between the molecules and the initial velocity of the second molecule can be set using the numeric input fields on the collision section.
 
-|![](imgs/014.png)|![](imgs/015.png)|
+|![](imgs/im1.png)|![](imgs/im2.png)|
 | :- | :- |
-|![](imgs/016.png)|![](imgs/017.png)|
-|![](imgs/018.png)|![](imgs/019.png)||
+|![](imgs/im3.png)|![](imgs/im4.png)|
+|![](imgs/im5.png)|![](imgs/im6.png)||
 
 **Figure 5.** Positioning the molecule with respect to local origin as a result of different ratio values. Top row: -0.5, 0.0, middle row: 0.33, 0.5, bottom row: 1.0, 1.5
 
 Impact points on each molecule can be adjusted by selecting the atoms and changing the ratio value on each molecule's sections. The first atom can be selected with the selector on the left, the second atom can be selected using the selector on the right. The ratio value can be entered into the numeric input field in the middle. The results of different ratio values can be seen in Figure 5. A value of 0.0 means the point is right on the first atom, 1.0 means the point is right on the second atom, 0.5 means right on the middle point between two atoms. Any value between 0.0 and 0.5 means the point is closer to the first atom, between 0.5 and 1.0 means the point is closer to the second atom. Negative values are possible, moving the point out from the first atom's side, as well as values greater than 1.0 which moves the point out from the second atom's side.
 
-|![](imgs/020.png)|![](imgs/021.png)|
+|![](imgs/prew1.png)|![](imgs/prew2.png)|
 | :- | :- |
-|![](imgs/022.png)|![](imgs/023.png)||
+|![](imgs/prew3.png)|![](imgs/prew4.png)||
 
 **Figure 6.** Previewing the collision - mid-bond of one molecule to the mid-bond of the other.
 
