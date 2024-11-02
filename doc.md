@@ -1,5 +1,12 @@
 # Introduction
 
+$$ [\begin{bmatrix} 
+   1 & 0 & 0 & V_x\\
+   0 & 1 & 0 & V_y\\
+   0 & 0 & 1 & V_z\\
+   0 & 0 & 0 & 1\\
+   \end{bmatrix} $$
+
 The current reaction product estimation paradigm is based on prior experimental results. Conventional methods, i.e., a detailed database query or a machine learning algorithm, require experimental reaction data already recorded.<sup>1–5</sup> As a result, any new reactions which do not resemble the experimental records are not likely to be estimated. The solution is to *'calculate'* the output of a reaction using computational chemistry methods.
 
 Computational chemistry is an umbrella term for a wide range of calculations which, in modern times, are only possible with their software implementations. Those software packages are mostly used in a black-box approach. Potential users have only basic knowledge of the methodology the software is based on, let alone any implementation details. The basic problem solved by computational chemistry is the optimized structure of a molecule in 3-dimensional space. The classical approach is to use the ball and stick model of molecules to optimize the bond lengths and angles to obtain the minimum energy form of the same bond pattern. Quantum chemistry methods on the other hand are based on the solution of Schrödinger Equation for the electrons inside the molecule, also known as the electronic methods.<sup>6–8</sup>
@@ -48,7 +55,7 @@ Rotation can be represented by the following matrices:
 
 ![](imgs/eq2c.png)					(2c)
 
-<i>R<sub>x</sub></i>, <i>R<sub>y</sub></i> and <i>R<sub>z</sub></i> indicate the rotations around <i>x</i>, <i>y</i> and <i>z</i> axis, with the angles <i>α</i>, <i>β</i>, and <i>γ</i> respectively. These three rotations can be combined by multiplying the rotation matrices.
+<i>R<sub>x</sub></i> *R_x*, <i>R<sub>y</sub></i> and <i>R<sub>z</sub></i> indicate the rotations around *x* <i>x</i>, <i>y</i> and <i>z</i> axis, with the angles &\alpha& <i>α</i>, <i>β</i>, and <i>γ</i> respectively. These three rotations can be combined by multiplying the rotation matrices.
 
 ![](imgs/eq3.png)					(3)
 
@@ -60,12 +67,7 @@ Translation is defined by a vector and implemented simply by a vector addition o
 
 ![](imgs/eq5.png)						(5)
 
-$$ \left[\begin{bmatrix} 
-   1 & 0 & 0 & V_x\\
-   0 & 1 & 0 & V_y\\
-   0 & 0 & 1 & V_z\\
-   0 & 0 & 0 & 1\\
-   \end{bmatrix} \right] $$
+
 
 Following the multiplication of the rotation matrix and the transformation matrix, the combined transformation matrix can be defined as follows:
 
