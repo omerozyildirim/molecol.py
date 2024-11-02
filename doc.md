@@ -1,11 +1,19 @@
 # Introduction
 
-$$ [\begin{bmatrix} 
+$$ \begin{bmatrix} 
    1 & 0 & 0 & V_x\\
    0 & 1 & 0 & V_y\\
    0 & 0 & 1 & V_z\\
    0 & 0 & 0 & 1\\
    \end{bmatrix} $$
+
+$$ \begin{bmatrix} 
+   1 & 0 & 0 & V_x\cr
+   0 & 1 & 0 & V_y\cr
+   0 & 0 & 1 & V_z\cr
+   0 & 0 & 0 & 1\cr
+   \end{bmatrix} $$
+
 
 The current reaction product estimation paradigm is based on prior experimental results. Conventional methods, i.e., a detailed database query or a machine learning algorithm, require experimental reaction data already recorded.<sup>1–5</sup> As a result, any new reactions which do not resemble the experimental records are not likely to be estimated. The solution is to *'calculate'* the output of a reaction using computational chemistry methods.
 
@@ -55,7 +63,7 @@ Rotation can be represented by the following matrices:
 
 ![](imgs/eq2c.png)					(2c)
 
-<i>R<sub>x</sub></i> *R_x*, <i>R<sub>y</sub></i> and <i>R<sub>z</sub></i> indicate the rotations around *x* <i>x</i>, <i>y</i> and <i>z</i> axis, with the angles &\alpha& <i>α</i>, <i>β</i>, and <i>γ</i> respectively. These three rotations can be combined by multiplying the rotation matrices.
+<i>R<sub>x</sub></i> $R_x$, <i>R<sub>y</sub></i> and <i>R<sub>z</sub></i> indicate the rotations around *x* <i>x</i>, <i>y</i> and <i>z</i> axis, with the angles $\alpha$ <i>α</i>, <i>β</i>, and <i>γ</i> respectively. These three rotations can be combined by multiplying the rotation matrices.
 
 ![](imgs/eq3.png)					(3)
 
