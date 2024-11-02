@@ -60,7 +60,7 @@ Translation is defined by a vector and implemented simply by a vector addition o
 
 ![](imgs/eq5.png)						(5)
 
-Then the combined translation matrix can be defined as follows:
+Following the multiplication of the rotation matrix and the transformation matrix, the combined transformation matrix can be defined as follows:
 
 ![](imgs/eq6.png)	(6)
 
