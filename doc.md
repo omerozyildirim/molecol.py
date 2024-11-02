@@ -61,9 +61,9 @@ Translation is defined by a vector and implemented simply by a vector addition o
 ![](imgs/eq5.png)						(5)
 
 $$ \begin{bmatrix} 
-   1 & 0 & 0 & V_x_\\
-   0 & 1 & 0 & Vy\\
-   0 & 0 & 1 & Vz\\
+   1 & 0 & 0 & V_x\\
+   0 & 1 & 0 & V_y\\
+   0 & 0 & 1 & V_z\\
    0 & 0 & 0 & 1\\
    \end{bmatrix} $$
 
