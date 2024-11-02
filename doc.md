@@ -60,12 +60,12 @@ Translation is defined by a vector and implemented simply by a vector addition o
 
 ![](imgs/eq5.png)						(5)
 
-$$ \begin{bmatrix} 
+$$ \left[\begin{bmatrix} 
    1 & 0 & 0 & V_x\\
    0 & 1 & 0 & V_y\\
    0 & 0 & 1 & V_z\\
    0 & 0 & 0 & 1\\
-   \end{bmatrix} $$
+   \end{bmatrix} \right] $$
 
 Following the multiplication of the rotation matrix and the transformation matrix, the combined transformation matrix can be defined as follows:
 
