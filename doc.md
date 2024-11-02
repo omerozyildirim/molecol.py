@@ -63,9 +63,11 @@ Rotation can be represented by the following matrices:
 
 ![](imgs/eq2c.png)					(2c)
 
-<i>R<sub>x</sub></i> $R_x$, <i>R<sub>y</sub></i> and <i>R<sub>z</sub></i> indicate the rotations around *x* <i>x</i>, <i>y</i> and <i>z</i> axis, with the angles $\alpha$ <i>α</i>, <i>β</i>, and <i>γ</i> respectively. These three rotations can be combined by multiplying the rotation matrices.
+$R_x$, $R_y$ and $R_z$ indicate the rotations around *x*, *y* and *z* axis, with the angles $\alpha$, $\beta$, and $\gamma$ respectively. These three rotations can be combined by multiplying the rotation matrices.
 
 ![](imgs/eq3.png)					(3)
+
+$$$$
 
 This operation results in the following combined rotation matrix:
 
