@@ -7,13 +7,16 @@ $$ \begin{bmatrix}
    0 & 0 & 0 & 1\\
    \end{bmatrix} $$
 
-$$ \begin{bmatrix} 
+```
+$$
+   \begin{bmatrix} 
    1 & 0 & 0 & V_x\cr
    0 & 1 & 0 & V_y\cr
    0 & 0 & 1 & V_z\cr
    0 & 0 & 0 & 1\cr
-   \end{bmatrix} $$
-
+   \end{bmatrix}
+$$
+```
 
 The current reaction product estimation paradigm is based on prior experimental results. Conventional methods, i.e., a detailed database query or a machine learning algorithm, require experimental reaction data already recorded.<sup>1–5</sup> As a result, any new reactions which do not resemble the experimental records are not likely to be estimated. The solution is to *'calculate'* the output of a reaction using computational chemistry methods.
 
