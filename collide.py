@@ -48,7 +48,7 @@ integrator = VelocityVerlet
 timestep = 0.1 / velocity
 
 # Declare the reaction object
-from lib_collider import Collision, version
+from lib_molecol import Collision, version
 print("\ncollider.py", "v" + version, "\n")
 
 coll1 = Collision(input1, input2, calculator, integrator, filename)
