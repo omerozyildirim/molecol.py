@@ -104,7 +104,7 @@ The difference of this work's methodology lies in the number of molecules the sy
 
 # Usage details
 
-This section explains how the collider.py library can be used in your scripts, with the details of the example script given. The whole framework can be downloaded from github.org.<sup>15</sup> The script accepts 3 command-line arguments; the JSON file containing the collision parameters (the output of collider.ui), number of steps in a simulation block and the number of blocks for the simulation to continue. The simulation is divided into blocks so that at the end of each block the electron density information is written as a cube file. The user can adjust the frequency of the generated cube files by adjusting the number of blocks and the number of steps inside a block.
+This section explains how the molecol.py library can be used in your scripts, with the details of the example script given. The whole framework can be downloaded from github.org.<sup>15</sup> The script accepts 3 command-line arguments; the JSON file containing the collision parameters (the output of molecol.ui), number of steps in a simulation block and the number of blocks for the simulation to continue. The simulation is divided into blocks so that at the end of each block the electron density information is written as a cube file. The user can adjust the frequency of the generated cube files by adjusting the number of blocks and the number of steps inside a block.
 
 ```python
 import sys
@@ -155,15 +155,15 @@ Here, xyz files can be viewed using any molecule viewer, log files are plain tex
 
 # UI details
 
-A web application named collider.ui is presented to make the adjustment of the parameters much easier using an intuitive user interface.<sup>18</sup> The main view presents a 3-dimensional representation of the molecules to collide so that the orientations can be adjusted visually using the controls on the right of the window. On the initial view, a pair of axes sets can be seen which represent the local origins of the molecules as seen in Figure 2. The collision points of the molecules are the origins of their local axes. The molecules are modified around these origins so that the collision point chosen lies on top of these local origins.
+A web application named molecol.ui is presented to make the adjustment of the parameters much easier using an intuitive user interface.<sup>18</sup> The main view presents a 3-dimensional representation of the molecules to collide so that the orientations can be adjusted visually using the controls on the right of the window. On the initial view, a pair of axes sets can be seen which represent the local origins of the molecules as seen in Figure 2. The collision points of the molecules are the origins of their local axes. The molecules are modified around these origins so that the collision point chosen lies on top of these local origins.
 
 ![](imgs/initial.png)
 
-**Figure 2.** Initial main view of collider.ui.
+**Figure 2.** Initial main view of molecol.ui.
 
 ![](imgs/loaded.png)
 
-**Figure 3.** Main view of collider.ui after the molecules are imported.
+**Figure 3.** Main view of molecol.ui after the molecules are imported.
 
 The molecules can be imported using the file import buttons labeled "Choose File". After a molecule is imported, its atoms are represented by CPK colored spheres,</sup> as seen in Figure 3. The atomic spheres share a small constant radius, which does not change proportional to atomic radii. This choice is made to avoid the larger atomic spheres obscuring the collision points. Labels seen inside the atomic spheres match the representation of each atom inside the selectors. They are composed of the element symbol and the sequence number of the atom in the molecule description file to provide a unique label for each atom. The orientations of imported molecules can be adjusted using the sliders, which are color-coded matching the colors of the local axes of the molecules - each slider rotates the molecule around the axis with the same color.
 
