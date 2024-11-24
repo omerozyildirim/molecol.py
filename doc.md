@@ -52,8 +52,6 @@ $R_x$, $R_y$ and $R_z$ indicate the rotations around *x*, *y* and *z* axis, with
 
 ![](imgs/eq3.png)					(3)
 
-$$R(\alpha , \beta , \gamma ) = R_z (\gamma )R_y (\beta )R_z (\alpha )$$
-
 This operation results in the following combined rotation matrix:
 
 ![](imgs/eq4.png)		(4)
