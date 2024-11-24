@@ -1,23 +1,5 @@
 # Introduction
 
-$$ \begin{bmatrix} 
-   1 & 0 & 0 & V_x\\
-   0 & 1 & 0 & V_y\\
-   0 & 0 & 1 & V_z\\
-   0 & 0 & 0 & 1\\
-   \end{bmatrix} $$
-
-```
-$$
-   \begin{bmatrix} 
-   1 & 0 & 0 & V_x\cr
-   0 & 1 & 0 & V_y\cr
-   0 & 0 & 1 & V_z\cr
-   0 & 0 & 0 & 1\cr
-   \end{bmatrix}
-$$
-```
-
 The current reaction product estimation paradigm is based on prior experimental results. Conventional methods, i.e., a detailed database query or a machine learning algorithm, require experimental reaction data already recorded.<sup>1–5</sup> As a result, any new reactions which do not resemble the experimental records are not likely to be estimated. The solution is to *'calculate'* the output of a reaction using computational chemistry methods.
 
 Computational chemistry is an umbrella term for a wide range of calculations which, in modern times, are only possible with their software implementations. Those software packages are mostly used in a black-box approach. Potential users have only basic knowledge of the methodology the software is based on, let alone any implementation details. The basic problem solved by computational chemistry is the optimized structure of a molecule in 3-dimensional space. The classical approach is to use the ball and stick model of molecules to optimize the bond lengths and angles to obtain the minimum energy form of the same bond pattern. Quantum chemistry methods on the other hand are based on the solution of Schrödinger Equation for the electrons inside the molecule, also known as the electronic methods.<sup>6–8</sup>
