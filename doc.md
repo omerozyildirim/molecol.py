@@ -82,6 +82,10 @@ Software implementation of the time integrator may vary for the system being iso
 
 The difference of this work's methodology lies in the number of molecules the system contains. Each collision needs only two molecules, forming a minimalist simulation, which is enough to calculate the output resulting from that single collision.
 
+# Installation
+
+Since it is a pure Python library, molecol.py should be put in the same directory with your custom scripts, without the need for any other installation instructions. molecol.ui is a web application and no installation is needed, only browse the URL with your favorite browser.
+
 # Usage details
 
 This section explains how the molecol.py library can be used in your scripts, with the details of the example script given. The whole framework can be downloaded from github.org.<sup>15</sup> The script accepts 3 command-line arguments; the JSON file containing the collision parameters (the output of molecol.ui), number of steps in a simulation block and the number of blocks for the simulation to continue. The simulation is divided into blocks so that at the end of each block the electron density information is written as a cube file. The user can adjust the frequency of the generated cube files by adjusting the number of blocks and the number of steps inside a block.
