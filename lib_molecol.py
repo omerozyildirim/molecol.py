@@ -22,6 +22,7 @@ class Collision:
 		self.b1 = None
 		self.b2 = None
 		self.resume = None
+		self.timestep = None
 		self.realtime = 0
 		self.message = ""
 
@@ -50,7 +51,7 @@ class Collision:
 		for i in self.mol2:
 			i.position = np.matmul(matrix, np.append(np.copy(i.position), [1]))[:3]
 
-	def shoot(self, velocity, timestep, steps, blocks):
+	def shoot(self, velocity, steps, blocks):
 		start_block = 0
 		self.realtime = 0.0
 		self.mol2.set_velocities([-velocity, 0, 0])
@@ -63,7 +64,7 @@ class Collision:
 		suffix = (d - 1) * "0"
 		write("initial.xyz", self.output)
 		i, c, e = 0, 1, 1
-		self.center(vacuum=10)  # Set the box to be saved as a cubefile
+		self.output.center(vacuum=10)  # Set the box to be saved as a cubefile
 		self.output.get_potential_energy()  # Get initial potential energy to calculate the initial electron distribution
 		rho = self.calculator.get_all_electron_density()
 		cubefile = self.filename + "_" + suffix[:b - c] + str(i) + "_" + suffix[:d - e] + str(i * steps) + "_" + str(self.realtime) + ".cube"
@@ -72,16 +73,16 @@ class Collision:
 		# Integration begins
 		integrator = self.integrator(
 			atoms = self.output,
-			timestep = timestep,
+			#timestep = self.timestep,
 			trajectory = self.trajectory_filename,
 			#append_trajectory = True, # This will be implemented in the future
 			logfile = self.log_filename
 		)
 		try:
 			for i in range(start_block, blocks):
-				self.__add_cell(10)  # Set the box to be saved as a cubefile
+				self.output.center(vacuum=10)  # Set the box to be saved as a cubefile
 				integrator.run(steps)
-				self.realtime += timestep
+				self.realtime += self.timestep
 				c = len(str(i + 1))
 				e = len(str((i + 1) * steps))
 				rho = self.calculator.get_all_electron_density()
@@ -97,10 +98,11 @@ class Collision:
 		write("final.xyz", self.output)
 		return result
 
-	def collide(self, distance, velocity, steps, blocks):
+	def collide(self, distance, velocity, timestep, steps, blocks):
 		if self.input1["matrix"] is not None and self.input2["matrix"] is not None:
 			self.apply_matrices()
 		else:
 			self.locate(distance)
 			self.set_orientation()
+		self.timestep = timestep
 		return self.shoot(velocity, steps, blocks)
